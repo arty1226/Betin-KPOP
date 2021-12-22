@@ -1,0 +1,31 @@
+<mat-table class="mat-elevation-z8" [dataSource]="heroes">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+    <mat-cell *matCellDef="let heroes">{{heroes.name.first}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+    <mat-header-cell *matHeaderCellDef>Last Name</mat-header-cell>
+    <mat-cell *matCellDef="let heroes">{{heroes.name.last}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="birthDate">
+    <mat-header-cell *matHeaderCellDef>Date of Birth</mat-header-cell>
+    <mat-cell *matCellDef="let heroes">{{heroes.dob.date.split('T')[0]}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="city">
+    <mat-header-cell *matHeaderCellDef>City</mat-header-cell>
+    <mat-cell *matCellDef="let heroes">{{heroes.location.city}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="index">
+    <mat-header-cell *matHeaderCellDef>Index</mat-header-cell>
+    <mat-cell *matCellDef="let heroes">{{heroes.location.postcode}}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"
+    (click)="onRowClicked(row)">
+  </mat-row>
+</mat-table>
