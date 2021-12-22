@@ -1,0 +1,6 @@
+
+<p>ПІБ учня: </p>
+<input type="text" [(ngModel)]="name" /><br>
+<p>Оцінка учня: </p>
+<input type="number" [(ngModel)]="salary" /><br><br>
+<child-comp [userName]="name" [userSalary]="salary"></child-comp>
